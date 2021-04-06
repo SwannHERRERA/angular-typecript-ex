@@ -1,8 +1,13 @@
 import { Pokemon } from "./pokemon";
 
-const main = () => {
+export const createPokemons = (): Pokemon[] => {
   const pokenames = ["bulbizare", "carapuce", "picachu", "evoli", "galopa"];
-  const pokemons = pokenames.map((name) => new Pokemon(name));
+  return pokenames.map((name) => new Pokemon(name));
+};
+
+const main = () => {
+  const pokemons = createPokemons();
   console.log(pokemons);
 };
+
 main();
