@@ -1,0 +1,7 @@
+[
+  { "name": "bulbizare", "speed": 20 },
+  { "name": "carapuce", "speed": 50 },
+  { "name": "picachu", "speed": 80 },
+  { "name": "evoli", "speed": 50 },
+  { "name": "galopa", "speed": 70 }
+]
