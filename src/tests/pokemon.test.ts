@@ -3,7 +3,13 @@ import { createPokemons } from "..";
 import pokeJSON from "../poke.json";
 
 test("Test Galopa creation", () => {
-  const galopa = new Pokemon({ name: "Galopa", speed: 70 });
+  const galopa = new Pokemon({
+    name: "Galopa",
+    speed: 70,
+    pv: 100,
+    atk: 45,
+    def: 23,
+  });
   expect(galopa.name).toBe("Galopa");
 });
 

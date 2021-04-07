@@ -1,24 +1,28 @@
-import { Pokemon, whoAttackFirst } from "../pokemon";
+import { createPokemons } from "..";
+import { Pokemon, Fight } from "../pokemon";
+import { FakeRand } from "./FakeRandom";
 
 describe("fight", () => {
+  const fight = new Fight(new FakeRand());
+  const pokemons = createPokemons();
   test("Galopa outspeed evoli", () => {
-    const galopa = new Pokemon({ name: "Galopa", speed: 70 });
-    const evoli = new Pokemon({ name: "Evoli", speed: 50 });
-    const fastestPokemon = whoAttackFirst(galopa, evoli);
+    const galopa = pokemons.find((poke) => poke.name === "galopa");
+    const evoli = pokemons.find((poke) => poke.name === "evoli");
+    const fastestPokemon = fight.whoAttackFirst(galopa, evoli);
     expect(fastestPokemon).toBe(galopa);
   });
 
   test("Galopa is outspeed by pikachu", () => {
-    const galopa = new Pokemon({ name: "Galopa", speed: 70 });
-    const pikatchu = new Pokemon({ name: "Pikachu", speed: 80 });
-    const fastestPokemon = whoAttackFirst(galopa, pikatchu);
-    expect(fastestPokemon).toBe(pikatchu);
+    const galopa = pokemons.find((poke) => poke.name === "galopa");
+    const pikatchu = pokemons.find((poke) => poke.name === "pikachu");
+    const fastestPokemon = fight.whoAttackFirst(galopa, pikatchu);
+    expect(fastestPokemon).toBe(galopa);
   });
 
   test("equal speed", () => {
-    const galopa1 = new Pokemon({ name: "Galopa", speed: 70 });
-    const galopa2 = new Pokemon({ name: "Galopa", speed: 70 });
-    const fastestPokemon = whoAttackFirst(galopa1, galopa2);
+    const galopa1 = pokemons.find((poke) => poke.name === "galopa");
+    const galopa2 = pokemons.find((poke) => poke.name === "galopa");
+    const fastestPokemon = fight.whoAttackFirst(galopa1, galopa2);
     expect(fastestPokemon).toBe(galopa2);
   });
 });
