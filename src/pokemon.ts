@@ -17,6 +17,7 @@ export class Pokemon implements IPokemonProps {
     this.def = props.def;
 
     this.vitalPoint = this.maxPv;
+    this.status = [];
   }
 
   public get vitalPoint(): number {
@@ -38,6 +39,7 @@ export class Pokemon implements IPokemonProps {
   maxPv: number;
   atk: number;
   def: number;
+  status: Effect[];
 }
 
 export enum Effect {
@@ -62,6 +64,9 @@ export class Fight {
     this.random = random;
   }
 
+  /**
+   * @TODO Move Effect not implemented
+   */
   attack(attacker: Pokemon, defender: Pokemon, attackMove: Move) {
     defender.vitalPoint -= attackMove.damage - defender.def + attacker.atk;
   }
