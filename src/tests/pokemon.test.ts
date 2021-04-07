@@ -6,7 +6,7 @@ test("Test Galopa creation", () => {
   const galopa = new Pokemon({
     name: "Galopa",
     speed: 70,
-    pv: 100,
+    vitalPoint: 100,
     atk: 45,
     def: 23,
   });

@@ -1,7 +1,7 @@
 [
-  { "name": "bulbizare", "speed": 20, "pv": 100, "atk": 45, "def": 23 },
-  { "name": "carapuce", "speed": 50, "pv": 100, "atk": 45, "def": 23 },
-  { "name": "picachu", "speed": 80, "pv": 100, "atk": 45, "def": 23 },
-  { "name": "evoli", "speed": 50, "pv": 100, "atk": 45, "def": 23 },
-  { "name": "galopa", "speed": 70, "pv": 100, "atk": 45, "def": 23 }
+  { "name": "bulbizare", "speed": 20, "vitalPoint": 100, "atk": 45, "def": 23 },
+  { "name": "carapuce", "speed": 50, "vitalPoint": 100, "atk": 45, "def": 23 },
+  { "name": "pikachu", "speed": 80, "vitalPoint": 100, "atk": 45, "def": 23 },
+  { "name": "evoli", "speed": 50, "vitalPoint": 100, "atk": 45, "def": 23 },
+  { "name": "galopa", "speed": 70, "vitalPoint": 100, "atk": 45, "def": 23 }
 ]

@@ -1,5 +1,5 @@
 import { createPokemons } from "..";
-import { Pokemon, Fight } from "../pokemon";
+import { Pokemon, Fight, Move } from "../pokemon";
 import { FakeRand } from "./FakeRandom";
 
 describe("fight", () => {
@@ -25,4 +25,16 @@ describe("fight", () => {
     const fastestPokemon = fight.whoAttackFirst(galopa1, galopa2);
     expect(fastestPokemon).toBe(galopa2);
   });
+
+  test("galopa attack picachu", () => {
+    const galopa = pokemons.find((poke) => poke.name === "galopa");
+    const pikatchu = pokemons.find((poke) => poke.name === "pikachu");
+    const doublePied = new Move("double Pied", 30);
+    fight.attack(galopa, pikatchu, doublePied);
+    expect(pikatchu.vitalPoint).toBe(48);
+  });
+
+  // Scenario: galopa attack picachu
+  //   Given galopa attack picachu avec "double pied"
+  //   Then pikatchu have x pv
 });

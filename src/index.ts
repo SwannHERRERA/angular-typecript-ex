@@ -7,7 +7,7 @@ export const createPokemons = (): Pokemon[] => {
 
 const main = () => {
   const pokemons = createPokemons();
-  console.log(pokemons);
+  // console.log(pokemons);
 };
 
 main();

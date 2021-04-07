@@ -19,3 +19,8 @@ Feature: pokemon Fight
     Given two galopa with 70 in speed
     When they fight
     Then the second galopa win
+
+
+  Scenario: galopa attack picachu
+    Given galopa attack picachu avec "double pied"
+    Then pikatchu have x pv
