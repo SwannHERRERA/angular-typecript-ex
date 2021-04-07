@@ -1,6 +1,6 @@
 import { Pokemon } from "../pokemon";
 import { createPokemons } from "..";
-import pokeJSON from "../pokemon.json";
+import pokeJSON from "../poke.json";
 
 test("Test Galopa creation", () => {
   const galopa = new Pokemon({ name: "Galopa", speed: 70 });

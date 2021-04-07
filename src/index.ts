@@ -1,10 +1,13 @@
-import pokemonJSON from "./pokemon.json";
 import { Pokemon } from "./pokemon";
+import pokemonJSON from "./poke.json";
 
 export const createPokemons = (): Pokemon[] => {
-  return [];
+  return pokemonJSON.map((pokeJSON) => new Pokemon(pokeJSON));
 };
 
-const main = () => {};
+const main = () => {
+  const pokemons = createPokemons();
+  console.log(pokemons);
+};
 
 main();
