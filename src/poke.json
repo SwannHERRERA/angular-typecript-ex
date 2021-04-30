@@ -3,5 +3,6 @@
   { "name": "carapuce", "speed": 50, "vitalPoint": 100, "atk": 45, "def": 23 },
   { "name": "pikachu", "speed": 80, "vitalPoint": 100, "atk": 45, "def": 23 },
   { "name": "evoli", "speed": 50, "vitalPoint": 100, "atk": 45, "def": 23 },
-  { "name": "galopa", "speed": 70, "vitalPoint": 100, "atk": 45, "def": 23 }
+  { "name": "galopa", "speed": 70, "vitalPoint": 100, "atk": 45, "def": 23 },
+  { "name": "fastGalopa", "speed": 71, "vitalPoint": 100, "atk": 45, "def": 23 }
 ]

@@ -21,10 +21,10 @@ describe("fight", () => {
   });
 
   test("equal speed", () => {
-    const galopa1 = pokemons.find((poke) => poke.name === "galopa");
-    const galopa2 = pokemons.find((poke) => poke.name === "galopa");
-    const fastestPokemon = fight.whoAttackFirst(galopa1, galopa2);
-    expect(fastestPokemon).toBe(galopa2);
+    const galopa = pokemons.find((poke) => poke.name === "galopa");
+    const fastGalopa = pokemons.find((poke) => poke.name === "fastGalopa");
+    const fastestPokemon = fight.whoAttackFirst(galopa, fastGalopa);
+    expect(fastestPokemon).toBe(fastGalopa);
   });
 
   test("galopa attack picachu", async () => {

@@ -10,12 +10,10 @@ export const createPokemons = (): Pokemon[] => {
 const main = async () => {
   const fight = new Fight(new FakeRand(), 2000);
   const pokemons = createPokemons();
-  const galopa = pokemons.find((poke) => poke.name === "galopa");
-  const evoli = pokemons.find((poke) => poke.name === "evoli");
+  const galopa = pokemons.find((poke) => poke.name === "galopa")!;
+  const evoli = pokemons.find((poke) => poke.name === "evoli")!;
   const jetDeSableBousted = new Move("Jet de sable Bousster", 1880);
-  if (galopa && evoli) {
-    await fight.attack(evoli, galopa, jetDeSableBousted);
-  }
+  await fight.attack(evoli, galopa, jetDeSableBousted);
 };
 
 main();
