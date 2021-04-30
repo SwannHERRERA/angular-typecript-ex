@@ -1,6 +1,8 @@
 import { createPokemons } from "..";
-import { Pokemon, Fight, Move } from "../pokemon";
+import { Pokemon } from "../pokemon";
+import { Fight } from "../Fight";
 import { FakeRand } from "./FakeRandom";
+import { Move } from "../Move";
 
 describe("fight", () => {
   const fight = new Fight(new FakeRand());
@@ -37,12 +39,8 @@ describe("fight", () => {
   test("galopa KO by evoli", () => {
     const galopa = pokemons.find((poke) => poke.name === "galopa");
     const evoli = pokemons.find((poke) => poke.name === "evoli");
-    const jetDeSableBousted = new Move("Jet de sable Bouster", 1880);
+    const jetDeSableBousted = new Move("Jet de sable Bousster", 1880);
     fight.attack(evoli, galopa, jetDeSableBousted);
     expect(galopa.vitalPoint).toBe(0);
   });
-
-  // Scenario: galopa attack picachu
-  //   Given galopa attack picachu avec "double pied"
-  //   Then pikatchu have x pv
 });

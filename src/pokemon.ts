@@ -1,4 +1,4 @@
-import { Random } from "./Random";
+import { Effect } from "./Move";
 
 export interface IPokemonProps {
   name: string;
@@ -40,44 +40,4 @@ export class Pokemon implements IPokemonProps {
   atk: number;
   def: number;
   status: Effect[];
-}
-
-export enum Effect {
-  burned,
-  asleep,
-  poisoned,
-}
-export class Move {
-  name: string;
-  damage: number;
-  effets?: Effect[];
-  constructor(name: string, damage: number, effets?: Effect[]) {
-    this.damage = damage;
-    this.name = name;
-    this.effets = effets;
-  }
-}
-
-export class Fight {
-  random: Random;
-  constructor(random: Random) {
-    this.random = random;
-  }
-
-  /**
-   * @TODO Move Effect not implemented
-   */
-  attack(attacker: Pokemon, defender: Pokemon, attackMove: Move) {
-    defender.vitalPoint -= attackMove.damage - defender.def + attacker.atk;
-  }
-
-  whoAttackFirst(poke1: Pokemon, poke2: Pokemon): Pokemon {
-    const pokeSpeed1 = poke1.speed + this.random.nextInt(15);
-    const pokeSpeed2 = poke1.speed + this.random.nextInt(15);
-    if (pokeSpeed1 > pokeSpeed2) {
-      return poke1;
-    } else {
-      return poke2; // if speed are equal return poke2
-    }
-  }
 }
