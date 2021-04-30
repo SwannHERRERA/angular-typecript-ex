@@ -24,9 +24,7 @@ export class Pokemon implements IPokemonProps {
     return this._vitalPoint;
   }
   public set vitalPoint(value: number) {
-    if (value > this.vitalPoint) {
-      this._vitalPoint = this.maxPv;
-    } else if (value < 0) {
+    if (value < 0) {
       this._vitalPoint = 0;
     } else {
       this._vitalPoint = value;

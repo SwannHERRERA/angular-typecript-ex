@@ -25,7 +25,10 @@ export class Fight {
 
   whoAttackFirst(poke1: Pokemon, poke2: Pokemon): Pokemon {
     const pokeSpeed1 = poke1.speed + this.random.nextInt(15);
-    const pokeSpeed2 = poke1.speed + this.random.nextInt(15);
+    const pokeSpeed2 = poke2.speed + this.random.nextInt(15);
+    console.log(poke1.name, pokeSpeed1);
+    console.log(poke2.name, pokeSpeed2);
+
     if (pokeSpeed1 > pokeSpeed2) {
       return poke1;
     } else {

@@ -15,7 +15,6 @@ const main = async () => {
   const jetDeSableBousted = new Move("Jet de sable Bousster", 1880);
   if (galopa && evoli) {
     await fight.attack(evoli, galopa, jetDeSableBousted);
-    console.log(galopa);
   }
 };
 
