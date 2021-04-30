@@ -1,16 +1,25 @@
-import { Pokemon } from "./pokemon";
+import { Move } from "./Move";
+import { Pokemon } from "./Pokemon";
 import { Random } from "./Random";
+import { wait } from "./utils/wait";
 
 export class Fight {
   random: Random;
-  constructor(random: Random) {
+  timeToWait: number;
+  constructor(random: Random, timeToWait: number) {
     this.random = random;
+    this.timeToWait = timeToWait;
   }
 
   /**
    * @TODO Move Effect not implemented
    */
-  attack(attacker: Pokemon, defender: Pokemon, attackMove: Move) {
+  async attack(
+    attacker: Pokemon,
+    defender: Pokemon,
+    attackMove: Move
+  ): Promise<void> {
+    await wait(this.timeToWait);
     defender.vitalPoint -= attackMove.damage - defender.def + attacker.atk;
   }
 

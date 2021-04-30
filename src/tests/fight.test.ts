@@ -1,11 +1,10 @@
 import { createPokemons } from "..";
-import { Pokemon } from "../pokemon";
 import { Fight } from "../Fight";
 import { FakeRand } from "./FakeRandom";
 import { Move } from "../Move";
 
-describe("fight", () => {
-  const fight = new Fight(new FakeRand());
+describe("fight", async () => {
+  const fight = new Fight(new FakeRand(), 0);
   const pokemons = createPokemons();
   test("Galopa outspeed evoli", () => {
     const galopa = pokemons.find((poke) => poke.name === "galopa");
@@ -28,19 +27,19 @@ describe("fight", () => {
     expect(fastestPokemon).toBe(galopa2);
   });
 
-  test("galopa attack picachu", () => {
+  test("galopa attack picachu", async () => {
     const galopa = pokemons.find((poke) => poke.name === "galopa");
     const pikatchu = pokemons.find((poke) => poke.name === "pikachu");
     const doublePied = new Move("double Pied", 30);
-    fight.attack(galopa, pikatchu, doublePied);
-    expect(pikatchu.vitalPoint).toBe(48);
+    await fight.attack(galopa, pikatchu, doublePied);
+    await expect(pikatchu.vitalPoint).toBe(48);
   });
 
-  test("galopa KO by evoli", () => {
+  test("galopa KO by evoli", async () => {
     const galopa = pokemons.find((poke) => poke.name === "galopa");
     const evoli = pokemons.find((poke) => poke.name === "evoli");
     const jetDeSableBousted = new Move("Jet de sable Bousster", 1880);
-    fight.attack(evoli, galopa, jetDeSableBousted);
-    expect(galopa.vitalPoint).toBe(0);
+    await fight.attack(evoli, galopa, jetDeSableBousted);
+    await expect(galopa.vitalPoint).toBe(0);
   });
 });
